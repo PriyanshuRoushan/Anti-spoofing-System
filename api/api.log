@@ -1,0 +1,120 @@
+2026-02-04 12:56:42,665 | INFO | REQUEST 969ba85fdc2a4a86bf44ac044f60c083 | POST /api/voice-detection
+2026-02-04 12:56:42,673 | INFO | RESPONSE 969ba85fdc2a4a86bf44ac044f60c083 | Status 422 | 6.99 ms
+2026-02-04 12:57:57,010 | INFO | REQUEST 71dae42fec4a43b8b4728ea8795b3b6b | POST /api/voice-detection
+2026-02-04 12:57:57,025 | INFO | Processing request c9f1d73b8e1a42b4a6067fd72e6b6526 Language=English
+2026-02-04 12:57:57,026 | INFO | Saved file uploads\719f1cae68684b6d98c8d91c77d977d1.mp3
+2026-02-04 12:57:57,027 | INFO | Completed c9f1d73b8e1a42b4a6067fd72e6b6526 Verdict=ai_generated Confidence=0.888
+2026-02-04 12:57:57,028 | INFO | RESPONSE 71dae42fec4a43b8b4728ea8795b3b6b | Status 200 | 18.00 ms
+2026-02-04 12:58:07,270 | INFO | REQUEST e43dc6e2481f44c68e1b8ec3ed92c146 | POST /api/voice-detection
+2026-02-04 12:58:07,273 | INFO | Processing request 91a1c0b32fbb419aa36572473bd1e85c Language=English
+2026-02-04 12:58:07,275 | INFO | Saved file uploads\b802cc0fcd0948b099241cf330571717.mp3
+2026-02-04 12:58:07,276 | INFO | Completed 91a1c0b32fbb419aa36572473bd1e85c Verdict=human Confidence=0.9437
+2026-02-04 12:58:07,277 | INFO | RESPONSE e43dc6e2481f44c68e1b8ec3ed92c146 | Status 200 | 7.00 ms
+2026-02-04 12:58:36,014 | INFO | REQUEST e579cd26db154ca58e470ceecf8a7480 | POST /api/voice-detection
+2026-02-04 12:58:36,017 | INFO | Processing request f4c4bf445ee14f45927abf97dc6c7075 Language=English
+2026-02-04 12:58:36,019 | INFO | Saved file uploads\c325e4767886496a9e37177672aa265d.mp3
+2026-02-04 12:58:36,020 | INFO | Completed f4c4bf445ee14f45927abf97dc6c7075 Verdict=human Confidence=0.8788
+2026-02-04 12:58:36,020 | INFO | RESPONSE e579cd26db154ca58e470ceecf8a7480 | Status 200 | 6.00 ms
+2026-02-04 12:58:52,086 | INFO | REQUEST d584d2f988214da0a617ef7d5740fa4b | POST /api/voice-detection
+2026-02-04 12:58:52,089 | INFO | Processing request 62999e2dc2454ef2801481fae403c461 Language=English
+2026-02-04 12:58:52,090 | INFO | Saved file uploads\238e004f8a1940969fd5c966b129b672.mp3
+2026-02-04 12:58:52,091 | INFO | Completed 62999e2dc2454ef2801481fae403c461 Verdict=human Confidence=0.9061
+2026-02-04 12:58:52,092 | INFO | RESPONSE d584d2f988214da0a617ef7d5740fa4b | Status 200 | 5.26 ms
+2026-02-04 12:59:36,046 | INFO | REQUEST ec055c7bc3dd4c828c04a5e5b875afad | POST /api/voice-detection
+2026-02-04 12:59:36,058 | INFO | Processing request cfdc61cf67c34eaeb082977a90215c1a Language=English
+2026-02-04 12:59:36,060 | INFO | Saved file uploads\eea9ee817a4a46dfa83e48dd04273551.mp3
+2026-02-04 12:59:36,060 | INFO | Completed cfdc61cf67c34eaeb082977a90215c1a Verdict=human Confidence=0.8945
+2026-02-04 12:59:36,061 | INFO | RESPONSE ec055c7bc3dd4c828c04a5e5b875afad | Status 200 | 14.18 ms
+2026-02-04 13:01:00,438 | INFO | REQUEST 9d4d03823333488e8a5031a1eb1a3592 | POST /api/voice-detection
+2026-02-04 13:01:00,450 | INFO | Processing request 084bd53829264c1d8601dae105d00538 Language=English
+2026-02-04 13:01:00,451 | INFO | Saved file uploads\d672dc3c049745b6acd89cc1d1240467.mp3
+2026-02-04 13:01:00,452 | INFO | Completed 084bd53829264c1d8601dae105d00538 Verdict=human Confidence=0.8543
+2026-02-04 13:01:00,453 | INFO | RESPONSE 9d4d03823333488e8a5031a1eb1a3592 | Status 200 | 15.00 ms
+2026-02-04 13:27:25,761 | INFO | Model loaded successfully
+2026-02-04 13:27:35,302 | INFO | REQUEST a59d544494574d789ad19c2b33bfd52c | POST /api/voice-detection
+2026-02-04 13:27:35,312 | INFO | Processing request 55f02855f7ec485a9789cab8e0b2b30a Language=English
+2026-02-04 13:27:35,313 | INFO | Saved file uploads\c7833cf7d33741a494e0063ef36c1f64.mp3
+2026-02-04 13:27:57,157 | ERROR | Model inference failed
+Traceback (most recent call last):
+  File "C:\Users\adity\OneDrive\Desktop\code\spoof_detection\api\main.py", line 216, in detect_voice
+    verdict, confidence = run_voice_detection_model(file_path)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adity\OneDrive\Desktop\code\spoof_detection\api\main.py", line 138, in run_voice_detection_model
+    genuine_confidence, spoof_confidence = predict(model, file_path)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adity\OneDrive\Desktop\code\spoof_detection\api\spoof_detection.py", line 134, in predict
+    out, _ = model(x)     # unpack tuple (logits, features)
+             ^^^^^^^^
+TypeError: 'coroutine' object is not callable
+2026-02-04 13:27:57,161 | INFO | RESPONSE a59d544494574d789ad19c2b33bfd52c | Status 500 | 21858.20 ms
+2026-02-04 13:48:39,580 | INFO | Model loaded successfully
+2026-02-04 13:48:54,545 | INFO | REQUEST 909cebfbccb345f9a6c972ab2271fc9c | POST /api/voice-detection
+2026-02-04 13:48:54,554 | INFO | Processing request 32a5a0f1066c471887accb7541c26bad Language=English
+2026-02-04 13:48:54,555 | INFO | Saved file uploads\6198d1b088484ada92861a92a4a13f9d.mp3
+2026-02-04 13:49:01,910 | ERROR | Model inference failed
+Traceback (most recent call last):
+  File "C:\Users\adity\OneDrive\Desktop\code\spoof_detection\api\main.py", line 216, in detect_voice
+    verdict, confidence = run_voice_detection_model(file_path)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adity\OneDrive\Desktop\code\spoof_detection\api\main.py", line 138, in run_voice_detection_model
+    genuine_confidence, spoof_confidence = predict(model, file_path)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adity\OneDrive\Desktop\code\spoof_detection\api\spoof_detection.py", line 134, in predict
+    out, _ = model(x)     # unpack tuple (logits, features)
+             ^^^^^^^^
+TypeError: 'coroutine' object is not callable
+2026-02-04 13:49:01,912 | INFO | RESPONSE 909cebfbccb345f9a6c972ab2271fc9c | Status 500 | 7367.01 ms
+2026-02-04 13:50:46,492 | INFO | Model loaded successfully
+2026-02-04 13:56:15,339 | INFO | REQUEST 6f2ec81617a74e54ba8f1dc1758b9879 | POST /api/voice-detection
+2026-02-04 13:56:15,346 | INFO | Processing request 3058ba59fa9d4f21944555c3c0443862 Language=English
+2026-02-04 13:56:15,350 | INFO | Saved file uploads\0a5363ac2bf54bf2855030c18c505d52.mp3
+2026-02-04 13:56:18,445 | ERROR | Model inference failed
+Traceback (most recent call last):
+  File "C:\Users\adity\OneDrive\Desktop\code\spoof_detection\api\main.py", line 216, in detect_voice
+    verdict, confidence = run_voice_detection_model(file_path)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adity\OneDrive\Desktop\code\spoof_detection\api\main.py", line 138, in run_voice_detection_model
+    genuine_confidence, spoof_confidence = predict(model, file_path)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adity\OneDrive\Desktop\code\spoof_detection\api\spoof_detection.py", line 134, in predict
+    out, _ = model(x)     # unpack tuple (logits, features)
+             ^^^^^^^^
+TypeError: 'coroutine' object is not callable
+2026-02-04 13:56:18,446 | INFO | RESPONSE 6f2ec81617a74e54ba8f1dc1758b9879 | Status 500 | 3107.26 ms
+2026-02-04 13:58:00,629 | INFO | Model loaded successfully
+2026-02-04 13:58:04,752 | INFO | REQUEST ccea13c4e94d46998fdefad320b90640 | POST /api/voice-detection
+2026-02-04 13:58:04,756 | INFO | Processing request a5f98c56fbf6409e92a3a73ac95c7821 Language=English
+2026-02-04 13:58:04,758 | INFO | Saved file uploads\7625c02013c645c3a42d29889dbaee6a.mp3
+2026-02-04 13:58:08,374 | INFO | Completed a5f98c56fbf6409e92a3a73ac95c7821 Verdict=AI_GENERATED Confidence=0.014712294563651085
+2026-02-04 13:58:08,378 | INFO | RESPONSE ccea13c4e94d46998fdefad320b90640 | Status 200 | 3626.36 ms
+2026-02-04 13:58:43,540 | INFO | REQUEST 5ecd09fa729e4465850713ac95764d8a | POST /api/voice-detection
+2026-02-04 13:58:43,543 | INFO | Processing request 3a51f654c7f94d83a433cd3a729d11da Language=English
+2026-02-04 13:58:43,545 | INFO | Saved file uploads\f49c463f32064e7685bf522dea70a833.mp3
+2026-02-04 13:58:43,928 | INFO | Completed 3a51f654c7f94d83a433cd3a729d11da Verdict=AI_GENERATED Confidence=0.014712294563651085
+2026-02-04 13:58:43,928 | INFO | RESPONSE 5ecd09fa729e4465850713ac95764d8a | Status 200 | 387.42 ms
+2026-02-04 14:18:50,883 | INFO | Model loaded successfully
+2026-02-04 14:18:57,348 | INFO | REQUEST eb5006c7639846cfab2542324a92bcfc | POST /api/voice-detection
+2026-02-04 14:18:57,352 | WARNING | Unauthorized access attempt
+2026-02-04 14:18:57,353 | INFO | RESPONSE eb5006c7639846cfab2542324a92bcfc | Status 401 | 5.01 ms
+2026-02-04 14:24:18,214 | INFO | Model loaded successfully
+2026-02-04 14:24:20,103 | INFO | REQUEST e0ba0f2a098d457fb6439fea77290e9f | POST /api/voice-detection
+2026-02-04 14:24:20,107 | WARNING | Unauthorized access attempt
+2026-02-04 14:24:20,108 | INFO | RESPONSE e0ba0f2a098d457fb6439fea77290e9f | Status 401 | 5.00 ms
+2026-02-04 14:24:27,123 | INFO | REQUEST d752f07145dc42239d2d2ff9cc2e9c5d | POST /api/voice-detection
+2026-02-04 14:24:27,125 | WARNING | Unauthorized access attempt
+2026-02-04 14:24:27,126 | INFO | RESPONSE d752f07145dc42239d2d2ff9cc2e9c5d | Status 401 | 3.00 ms
+2026-02-04 14:25:16,352 | INFO | Model loaded successfully
+2026-02-04 14:26:56,093 | INFO | Model loaded successfully
+2026-02-04 14:27:14,691 | INFO | REQUEST 2211b0279de74d6790ac9b461fe8c246 | POST /api/voice-detection
+2026-02-04 14:27:14,695 | WARNING | Unauthorized access attempt
+2026-02-04 14:27:14,696 | INFO | RESPONSE 2211b0279de74d6790ac9b461fe8c246 | Status 401 | 5.33 ms
+2026-02-04 14:27:52,455 | INFO | Model loaded successfully
+2026-02-04 14:28:00,455 | INFO | REQUEST f113b314a020420b85ca3eb518ecaff2 | POST /api/voice-detection
+2026-02-04 14:28:00,460 | WARNING | Unauthorized access attempt
+2026-02-04 14:28:00,460 | INFO | RESPONSE f113b314a020420b85ca3eb518ecaff2 | Status 401 | 4.53 ms
+2026-02-04 14:30:49,214 | INFO | Model loaded successfully
+2026-02-04 14:30:58,438 | INFO | REQUEST a299db76a76c41bdb777a03474ebaf1b | POST /api/voice-detection
+2026-02-04 14:30:58,443 | INFO | Processing request 40dd02a0453b4e88a49c2165d023cacf Language=English
+2026-02-04 14:30:58,444 | INFO | Saved file uploads\0a0e5a0880844bb6b73eafea875cfb30.mp3
+2026-02-04 14:31:01,575 | INFO | Completed 40dd02a0453b4e88a49c2165d023cacf Verdict=AI_GENERATED Confidence=0.014712294563651085
+2026-02-04 14:31:01,577 | INFO | RESPONSE a299db76a76c41bdb777a03474ebaf1b | Status 200 | 3138.14 ms
