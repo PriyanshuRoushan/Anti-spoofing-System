@@ -24,3 +24,13 @@ irm https://astral.sh/uv/install.ps1 | iex
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ```
+
+
+### Deploy
+
+```sh 
+cd api
+pip install -r requirements.txt
+uvicorn main:app --log-level info --access-log
+
+```
