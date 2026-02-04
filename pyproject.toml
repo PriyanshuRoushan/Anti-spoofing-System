@@ -1,18 +1,24 @@
 [project]
 name = "spoof-detection"
 version = "0.1.0"
-description = "Add your description here"
+description = "Audio spoof detection API"
 readme = "README.md"
-requires-python = "=3.11"
+
+requires-python = ">=3.11,<3.13"
+
 dependencies = [
-    "fastapi>=0.128.0",
-    "librosa>=0.11.0",
-    "numpy>=2.3.5",
-    "pydantic>=2.12.5",
-    "python-dotenv>=1.2.1",
-    "python-multipart>=0.0.22",
-    "soundfile>=0.13.1",
-    "torch>=2.10.0",
+    "fastapi>=0.110,<0.130",
+
+    "librosa>=0.10,<0.12",
+    "numpy>=1.26,<2.0",
+    "soundfile>=0.12,<0.14",
+
+    "torch>=2.2,<2.6",
     "torchcontrib>=0.0.2",
-    "uvicorn>=0.40.0",
+
+    "pydantic>=2.6,<3.0",
+    "python-dotenv>=1.0,<2.0",
+    "python-multipart>=0.0.9,<0.1",
+
+    "uvicorn>=0.29,<0.32"
 ]
