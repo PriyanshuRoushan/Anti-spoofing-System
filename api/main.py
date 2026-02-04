@@ -304,3 +304,8 @@ async def detect_voice(payload: VoiceDetectionRequest):
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+
+@app.get("/")
+def root():
+    return {"status": "running"}
