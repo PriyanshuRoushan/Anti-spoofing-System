@@ -11,7 +11,14 @@ import soundfile as sf
 SAMPLE_RATE = 16000
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-MODEL_PATH = "model\weights\AASIST-L.pth"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+MODEL_PATH = os.path.join(
+    BASE_DIR,
+    "model",
+    "weights",
+    "AASIST-L.pth"
+)
 
 
 
