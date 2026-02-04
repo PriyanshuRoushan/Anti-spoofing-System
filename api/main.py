@@ -64,9 +64,16 @@ model = None
 # ===========================
 
 class VoiceDetectionRequest(BaseModel):
-    language: str = Field(..., example="Tamil")
-    audioFormat: str = Field(..., example="mp3")
+    language: str = Field(
+        ...,
+        json_schema_extra={"example": "Tamil"}
+    )
+    audioFormat: str = Field(
+        ...,
+        json_schema_extra={"example": "mp3"}
+    )
     audioBase64: str = Field(..., min_length=100)
+
 
 
 # ===========================
