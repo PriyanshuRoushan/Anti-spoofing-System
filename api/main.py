@@ -11,6 +11,8 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from spoof_detection import load_model, predict
 from dotenv import load_dotenv
+from contextlib import asynccontextmanager
+
 
 load_dotenv()   # Reads .env into os.environ
 
@@ -42,13 +44,29 @@ logger = logging.getLogger(__name__)
 
 
 # ===========================
-# FASTAPI APP
+# FASTAPI APP & APP STARTUP/SHUTDOWN
 # ===========================
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    global model
+
+    require_env("API_TOKEN")
+
+    print("Loading model...")
+    model = load_model()
+    logger.info("Model loaded successfully")
+
+    yield  # App runs here
+
+    logger.info("Shutting down...")
+
+
 
 app = FastAPI(
     title="Voice Detection API",
     version="1.0.0",
-    docs_url="/docs"
+    docs_url="/docs", 
+    lifespan=lifespan
 )
 
 # =====================================================
@@ -114,19 +132,17 @@ def verify_api_key(x_api_key: str = Header(...)):
             exceptionType="UnauthorizedAccess"
         )
 
-# ===========================
-# APP STARTUP : LOAD MODEL
-# ===========================
 
-@app.on_event("startup")
-async def load_model_onstartup():
-    global model
+
+# @app.on_event("startup")
+# async def load_model_onstartup():
+#     global model
     
-    API_KEY = require_env("API_TOKEN")
-    # print(API_KEY)
-    print("Loading model...")
-    model = load_model()
-    logger.info("Model loaded successfully")
+#     API_KEY = require_env("API_TOKEN")
+#     # print(API_KEY)
+#     print("Loading model...")
+#     model = load_model()
+#     logger.info("Model loaded successfully")
 
 
 # ===========================
